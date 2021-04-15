@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.naxiang.findcode.mapper.MasterMapper">
+<!--    <update id="updateClient" parameterType="jp.co.forestec.carnelian.dto.ClientDto">-->
+<!--        update t_client set-->
+<!--        <if test="clientId != null and clientId != ''">-->
+<!--            client_id = #{clientId},-->
+<!--        </if>-->
+<!--        <if test="redirectUris != null and redirectUris != ''">-->
+<!--            redirect_uris = #{redirectUris},-->
+<!--        </if>-->
+<!--        <if test="userService != null and userService != ''">-->
+<!--            user_service = #{userService},-->
+<!--        </if>-->
+<!--        <if test="clientName != null and clientName != ''">-->
+<!--            client_name = #{clientName},-->
+<!--        </if>-->
+<!--        <if test="clientSecret != null and clientSecret != ''">-->
+<!--            client_secret = #{clientSecret},-->
+<!--        </if>-->
+<!--        <if test="delFlag != null and delFlag != ''">-->
+<!--            del_flag = #{delFlag},-->
+<!--        </if>-->
+<!--        id = #{id}-->
+<!--        where id = #{id}-->
+
+<!--    </update>-->
+
+    <resultMap id="MASTER_MAP" type="com.naxiang.findcode.vo.MasterVO">
+        <id column="id" property="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+        <result column="master_code" property="masterCode" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result column="master_value" property="masterValue" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result column="del_flg" property="delFlg" javaType="java.lang.String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getMasterByCode" parameterType="java.lang.String" resultMap="MASTER_MAP">
+		select * from m_master where master_code = #{masterCode} and del_flg = '0'
+    </select>
+</mapper>

@@ -1,0 +1,50 @@
+.main-body {
+    font-family: Bahnschrift;
+    margin:0 auto
+}
+
+.search-btn::after {
+    top: 0;
+    margin-left: -4px;
+    height: 100%;
+    width: 100%;
+    content: "\1f50d";
+    font-family: Zeroicons-Line;
+    line-height: 53px;
+    color: #fff;
+    padding-left: 19px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    max-height: 50px;
+}
+
+.search-btn {
+    position: absolute;
+    height: 54px;
+    width: 50px;
+    background-color: purple;
+    top: 0;
+    z-index: 1000;
+}
+
+.search-fields{
+    position: absolute;
+    margin-left: 105px;
+}
+
+.search-input {
+    height: 46px;
+    font-size: x-large;
+    border: 3px solid purple;
+    margin-left: -4px;
+    outline:none;
+}
+
+.search-select {
+    position: absolute;
+    height: 54px;
+    border: 3px solid purple;
+    font-size: x-large;
+    background-color: purple;
+    outline:none;
+}
